@@ -3,9 +3,9 @@ using System.Collections;
 
 public class RandomMatchmaker : MonoBehaviour
 {
-	private GameObject player;
+	public GameObject player;
 	public GameObject information;
-	// Use this for initialization
+
 	void Start()
 	{
 		PhotonNetwork.ConnectUsingSettings("0.1");
@@ -31,14 +31,26 @@ public class RandomMatchmaker : MonoBehaviour
 	{
 		Debug.Log("Joined random room!");
 		player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
-		((MonoBehaviour)player.GetComponent("Movement")).enabled = true;
+		player.GetComponent<Move> ().enabled = true;
 		player.GetComponentInChildren<Camera> ().enabled = true;
 	}
 
 	void Update()
 	{
-		information.guiText.text = "PosX: " + player.gameObject.transform.position.x;
-		information.guiText.text += " PosZ: " + player.gameObject.transform.position.z;
-		information.guiText.text += " Number of players: " + PhotonNetwork.playerList.Length;
+		if (player != null) {
+						Vector3 v3T = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15);
+						v3T = Camera.main.ScreenToWorldPoint (v3T);
+						information.guiText.text = "PosX: " + player.gameObject.transform.position.x;
+						information.guiText.text += " PosZ: " + player.gameObject.transform.position.z;
+						information.guiText.text += " Number of players: " + PhotonNetwork.playerList.Length;
+						information.guiText.text += " Ping: " + PhotonNetwork.GetPing();
+
+
+				} 
+		else if (PhotonNetwork.inRoom == true) 
+		{
+			PhotonNetwork.Disconnect();
+			Application.LoadLevel(Application.loadedLevel);
+		}
 	}
 }

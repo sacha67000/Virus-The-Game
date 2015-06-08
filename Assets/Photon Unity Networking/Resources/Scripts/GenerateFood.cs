@@ -2,11 +2,17 @@
 using System.Collections;
 
 public class GenerateFood : MonoBehaviour {
+	public int nbFood = 0;
 
 	void 		createFood()
 	{
-		PhotonNetwork.Instantiate("Food", new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500)), Quaternion.identity, 0);
+		if (nbFood < 800)
+		{
+			PhotonNetwork.Instantiate("Food", new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)), Quaternion.identity, 0);
+			nbFood++;
+		}
 	}
+
 	void       Start()
 	{
 		Debug.Log ("Starting Generation");
