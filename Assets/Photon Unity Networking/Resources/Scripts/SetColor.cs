@@ -8,6 +8,6 @@ public class SetColor : MonoBehaviour {
 	public float	blue;
 
 	void Start () {
-		this.gameObject.renderer.material.color = new Color (red, blue, green);
+		this.gameObject.renderer.material.color = new Color (red / 256f, green / 256f, blue / 256f);
 	}
 }
