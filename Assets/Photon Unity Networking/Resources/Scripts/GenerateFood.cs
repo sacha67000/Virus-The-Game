@@ -8,7 +8,7 @@ public class GenerateFood : MonoBehaviour {
 	{
 		if (nbFood < 800)
 		{
-			PhotonNetwork.Instantiate("Food", new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)), Quaternion.identity, 0);
+			PhotonNetwork.Instantiate("Food", new Vector3(Random.Range(-100, 100), 0.2f, Random.Range(-100, 100)), Quaternion.identity, 0);
 			nbFood++;
 		}
 	}

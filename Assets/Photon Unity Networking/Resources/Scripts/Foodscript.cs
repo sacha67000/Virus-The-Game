@@ -14,4 +14,15 @@ public class Foodscript : MonoBehaviour {
 		GameObject.Find ("Scripts").GetComponent<GenerateFood> ().nbFood -= 1;
 			PhotonNetwork.Destroy (this.gameObject);
 		}
+
+		void Update()
+		{
+		this.gameObject.transform.Rotate (Vector3.right * Time.deltaTime * 30);
+		}
+
+		void Start()
+		{
+			this.gameObject.transform.localRotation = Quaternion.Euler(90, 0, 0);
+		}
+
 }
