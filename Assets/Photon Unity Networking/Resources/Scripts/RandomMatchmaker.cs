@@ -31,7 +31,7 @@ public class RandomMatchmaker : MonoBehaviour
 	{
 		Debug.Log("Joined random room!");
 		player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
-		player.GetComponent<Move> ().enabled = true;
+		player.GetComponentInChildren<Move> ().enabled = true;
 		player.GetComponentInChildren<Camera> ().enabled = true;
 	}
 

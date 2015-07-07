@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Combat : MonoBehaviour {
 
+	public GameObject camera;
+
 	void OnTriggerEnter(Collider other) {
 		Debug.Log ("Collision");
 		if (other.gameObject.tag == "Player" && this.gameObject.transform.localScale.x < other.gameObject.transform.localScale.x * 0.9)
