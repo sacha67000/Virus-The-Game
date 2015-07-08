@@ -6,7 +6,7 @@ public class GenerateFood : MonoBehaviour {
 
 	void 		createFood()
 	{
-		if (nbFood < 800)
+		if (nbFood < 200)
 		{
 			PhotonNetwork.Instantiate("Food", new Vector3(Random.Range(-100, 100), 0.2f, Random.Range(-100, 100)), Quaternion.identity, 0);
 			nbFood++;

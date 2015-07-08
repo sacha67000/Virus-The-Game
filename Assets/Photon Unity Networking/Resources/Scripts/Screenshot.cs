@@ -5,7 +5,7 @@ public class Screenshot : MonoBehaviour {
 	string imagename;
 
 	void LateUpdate () {
-		if (Input.GetKey (KeyCode.F12)) 
+		if (Input.GetKeyUp (KeyCode.F12)) 
 		{
 			imagename = "screenshot" + Random.Range(0, 2000000).ToString() + ".png";
 			Application.CaptureScreenshot(imagename);

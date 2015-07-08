@@ -5,6 +5,8 @@ public class RandomMatchmaker : MonoBehaviour
 {
 	public GameObject player;
 	public GameObject information;
+	public GameObject playerGui;
+	private GameObject[] allplayers;
 
 	void Start()
 	{
@@ -30,9 +32,12 @@ public class RandomMatchmaker : MonoBehaviour
 	void OnJoinedRoom()
 	{
 		Debug.Log("Joined random room!");
-		player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
+		player = PhotonNetwork.Instantiate("Player", new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)), Quaternion.identity, 0);
 		player.GetComponentInChildren<Move> ().enabled = true;
 		player.GetComponentInChildren<Camera> ().enabled = true;
+		player.GetComponentInChildren<RotateTowardsMouse> ().enabled = true;
+		player.GetComponentInChildren<Menu> ().enabled = true;
+		player.GetComponentInChildren<AudioListener> ().enabled = true;
 	}
 
 	void Update()
@@ -44,8 +49,12 @@ public class RandomMatchmaker : MonoBehaviour
 						information.guiText.text += " PosZ: " + player.gameObject.transform.position.z;
 						information.guiText.text += " Number of players: " + PhotonNetwork.playerList.Length;
 						information.guiText.text += " Ping: " + PhotonNetwork.GetPing();
+						information.guiText.text += " Current Size: " + (int)(player.transform.localScale.x * 100);
 
-
+						playerGui.guiText.text = "Players:";
+						allplayers =  GameObject.FindGameObjectsWithTag("Player");
+						foreach (GameObject play in allplayers)
+						playerGui.guiText.text += "\nPlayer with size:" + (int)(play.gameObject.transform.localScale.x * 100);
 				} 
 		else if (PhotonNetwork.inRoom == true) 
 		{

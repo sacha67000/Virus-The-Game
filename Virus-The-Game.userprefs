@@ -1,10 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Screenshot.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Photon Unity Networking\Resources\Scripts\RandomMatchmaker.cs">
     <Files>
-      <File FileName="Assets\Screenshot.cs" Line="10" Column="75" />
-      <File FileName="Assets\StartScript.js" Line="1" Column="1" />
-      <File FileName="Assets\QuitScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Photon Unity Networking\Resources\Scripts\RandomMatchmaker.cs" Line="35" Column="86" />
+      <File FileName="Assets\Photon Unity Networking\Resources\Scripts\Move.cs" Line="7" Column="25" />
+      <File FileName="Assets\Photon Unity Networking\Resources\Scripts\GenerateFood.cs" Line="11" Column="105" />
+      <File FileName="Assets\Photon Unity Networking\Resources\Scripts\NetworkCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Photon Unity Networking\Resources\Scripts\Combat.cs" Line="1" Column="1" />
+      <File FileName="Assets\ToMainMenu.js" Line="15" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
